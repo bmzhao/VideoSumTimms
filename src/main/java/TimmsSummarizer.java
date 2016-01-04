@@ -49,13 +49,10 @@ public class TimmsSummarizer {
                     for (String string : lineArray) {
                         System.out.println(string);
                     }
-
                     System.out.println(inputFile.getPath());
                     throw new RuntimeException("The transcript file has an incorrect number of sections after " +
                             "splitting by tabs!!!");
-
                 }
-
                 String time = lineArray[0];
                 fakeLastTime = time;
                 String speaker = lineArray[1]; //unused
@@ -65,8 +62,6 @@ public class TimmsSummarizer {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
         fakeLastTime = TimeRegion.secondsToTimeString(TimeRegion.calculateSeconds(fakeLastTime) + 1);
         return timeToTextMappingToRawTranscript(timeToText, fakeLastTime);
     }
