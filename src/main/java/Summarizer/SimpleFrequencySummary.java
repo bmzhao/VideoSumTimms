@@ -24,7 +24,9 @@ public class SimpleFrequencySummary implements Summary {
         this.transcript = input;
 
         //calculates all tf, df, tfidf, and local tf frequencies
-        transcript.analyzeWordCount();
+        if (!transcript.isAnalyzedYet()) {
+            transcript.analyzeWordCount();
+        }
     }
 
     public List<Group> generateSummary() {
@@ -129,7 +131,8 @@ public class SimpleFrequencySummary implements Summary {
 
     private double determineDurationOfSummary() {
         double lengthOfVideo = transcript.getDurationOfVideo();
-        return Math.min(Constants.DEFAULT_SUMMARY_DURATION_SECONDS, lengthOfVideo * this.percentageOfVideo);
+        return lengthOfVideo * this.percentageOfVideo;
+//        return Math.min(Constants.DEFAULT_SUMMARY_DURATION_SECONDS, lengthOfVideo * this.percentageOfVideo);
     }
 
     /**

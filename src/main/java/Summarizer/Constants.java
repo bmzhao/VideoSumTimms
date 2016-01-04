@@ -22,7 +22,7 @@ public class Constants {
     public static final double DEFAULT_PERCENTAGE_TOPWORDS = 0.25;
     public static final Weight DEFAULT_WEIGHT_TYPE = Weight.TFIDF;
     public static final double DEFAULT_SUMMARY_DURATION_SECONDS = 180;
-    public static final double DEFAULT_SUMMARY_PROPORTION = 0.25;
+    public static final double DEFAULT_SUMMARY_PROPORTION = 0.10;
     public static final boolean DEFAULT_NORMALIZE_ON_DURATION = false;
     public static final double DEFAULT_CUTOFF = 0.15;
     public static final int WORD_CLOUD_SIZE = 100;

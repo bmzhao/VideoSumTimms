@@ -107,6 +107,12 @@ public class AllStringData {
         return stringDatas;
     }
 
+    public List<StringData> internalStringDatas(){
+        List<StringData> stringDatas = new ArrayList<>(stringDataHashMap.values());
+        return stringDatas;
+    }
+
+
     public void removeEmptyString() {
         if (stringDataHashMap.containsKey("")) {
             stringDataHashMap.remove("");
