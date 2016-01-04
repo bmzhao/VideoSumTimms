@@ -372,7 +372,7 @@
 00:24:18	T	Well, at least sit straight and get to work, please!
 00:24:21	SN	Teacher, I have been checking the wrong chapter, I thought-
 00:24:25	T	Oh, that is smart.
-00:24:26		
+00:24:26
 00:24:44	T	May I briefly interrupt? I want the both of you to write down a clarification for yourselves at problem 27.
 00:24:50	SN	Okay.
 00:24:51	T	So that you explain to yourself why that line is there, otherwise you will never find it back.
@@ -668,4 +668,4 @@
 00:41:36	T	Yes, very nice, thanks. See you tomorrow...
 00:41:40	SN	(inaudible)
 00:41:41	T	You have to see how far you'll get.
-Ê
+ï¿½

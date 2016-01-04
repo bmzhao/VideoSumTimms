@@ -84,7 +84,6 @@
 00:03:53	T	Okay?
 00:03:55	T	Okay, then everybody... let's try thinking about it. The work time is... would you think about it for three minutes?
 00:04:03	T	First of all, please think about it individually for three minutes. Okay begin.
-00:04:07		
 00:05:37	T	Are you done?
 00:05:44	T	(inaudible) You made it straight here? Is it the same? Definitely? Is it the same?
 00:05:49	SN	It's appro- approximate.
@@ -1267,4 +1266,4 @@
 00:50:41	SN	Attention.
 00:50:44	S	Bow.
 00:50:45	Ss	Thank you very much.
-Ê
+ï¿½

@@ -1,7 +1,6 @@
 import Summarizer.*;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -27,39 +26,46 @@ public class TimmsSummarizer {
             throw new RuntimeException("File does not exist!");
         }
         StringBuilder output = new StringBuilder();
-        Scanner scanner = null;
-        try {
-            scanner = new Scanner(inputFile);
-        } catch (FileNotFoundException e) {
+          LinkedHashMap<String, String> timeToText = new LinkedHashMap<>();
+        String fakeLastTime = null;
+
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(inputFile))){
+            String line;
+            while ((line= bufferedReader.readLine()) != null) {
+                if (line.equals("�")) {
+                    continue;
+                }
+                String[] lineArray = line.split("\t");
+                if (lineArray.length == 1 &&
+                        (lineArray[0].matches("\\d\\d:\\d\\d:\\d\\d\\s*$") ||
+                                lineArray[0].matches(".*Form\\s*$")) ||
+                                lineArray[0].matches("\\s*$")
+                        ) {
+                    continue;
+                }
+                if (lineArray.length != 3) {
+                    System.out.println(lineArray.length);
+                    System.out.println(line);
+                    for (String string : lineArray) {
+                        System.out.println(string);
+                    }
+
+                    System.out.println(inputFile.getPath());
+                    throw new RuntimeException("The transcript file has an incorrect number of sections after " +
+                            "splitting by tabs!!!");
+
+                }
+
+                String time = lineArray[0];
+                fakeLastTime = time;
+                String speaker = lineArray[1]; //unused
+                String contentString = lineArray[2];
+                timeToText.put(time, contentString);
+            }
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
-        LinkedHashMap<String, String> timeToText = new LinkedHashMap<>();
-        String fakeLastTime = null;
-
-        while (scanner.hasNextLine()) {
-            String line = scanner.nextLine();
-            String[] lineArray = line.split("\t");
-            if (lineArray.length != 3) {
-
-                System.out.println(lineArray.length);
-                System.out.println(line);
-                for (String string : lineArray) {
-                    System.out.println(string);
-                }
-
-                System.out.println(inputFile.getPath());
-                throw new RuntimeException("The transcript file has an incorrect number of sections after " +
-                        "splitting by tabs!!!");
-
-            }
-
-            String time = lineArray[0];
-            fakeLastTime = time;
-            String speaker = lineArray[1]; //unused
-            String contentString = lineArray[2];
-            timeToText.put(time, contentString);
-        }
 
         fakeLastTime = TimeRegion.secondsToTimeString(TimeRegion.calculateSeconds(fakeLastTime) + 1);
         return timeToTextMappingToRawTranscript(timeToText, fakeLastTime);

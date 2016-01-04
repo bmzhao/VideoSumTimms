@@ -299,4 +299,3 @@
 00:42:42	T	A few people had quite different predictions such that all the angles will be less than 90 degrees.
 00:42:49	T	Um, which is another one, others might not have thought of that one but you could test that conjecture as well.
 00:42:55	T	Okay, we'll be continuing on with this at a later stage.
-Ê
