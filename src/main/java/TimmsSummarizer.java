@@ -41,8 +41,17 @@ public class TimmsSummarizer {
             String line = scanner.nextLine();
             String[] lineArray = line.split("\t");
             if (lineArray.length != 3) {
+
+                System.out.println(lineArray.length);
+                System.out.println(line);
+                for (String string : lineArray) {
+                    System.out.println(string);
+                }
+
+                System.out.println(inputFile.getPath());
                 throw new RuntimeException("The transcript file has an incorrect number of sections after " +
                         "splitting by tabs!!!");
+
             }
 
             String time = lineArray[0];

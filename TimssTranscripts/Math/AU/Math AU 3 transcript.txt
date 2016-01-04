@@ -458,7 +458,7 @@
 00:40:47	T	Okay.
 00:40:48	S	We got-
 00:40:49	T	Those- those two scores seem very high compared to the rest, yes?
-00:40:50	O:	[Bell]
+00:40:50	O	[Bell]
 00:40:54	T	And we are not going to have time to enter this data and check it.
 00:41:00	T	So, second function, "On." Put the covers back onto your calculators.
 00:41:12	T	Beg your pardon?
@@ -480,4 +480,4 @@
 00:43:12	T	I've gotta do it. Liam, outside, thank you.
 00:43:15	SN	They found a better candidate.
 00:43:18	T	Oh, don't tell me that, Jack.
-Ê
+ï¿½
